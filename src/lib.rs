@@ -24,7 +24,7 @@ type HmacSha256 = Hmac<Sha256>;
 
 /// Contains launch parameters data
 /// https://docs.telegram-mini-apps.com/platform/init-data#parameters-list
-#[derive(Debug, PartialEq, Deserialize)]
+#[derive(Debug, PartialEq, Deserialize, Clone)]
 pub struct InitData {
     /// The date the initialization data was created. Is a number representing a
     /// Unix timestamp.
@@ -66,7 +66,7 @@ pub struct InitData {
 
 /// Describes user information:
 /// https://docs.telegram-mini-apps.com/launch-parameters/init-data#user
-#[derive(Debug, PartialEq, Deserialize)]
+#[derive(Debug, PartialEq, Deserialize, Clone)]
 pub struct User {
     /// True, if this user added the bot to the attachment menu.
     pub added_to_attachment_menu: Option<bool>,
@@ -102,7 +102,7 @@ pub struct User {
 
 /// Describes the chat information.
 /// https://docs.telegram-mini-apps.com/platform/init-data#chat
-#[derive(Debug, PartialEq, Deserialize)]
+#[derive(Debug, PartialEq, Deserialize, Clone)]
 pub struct Chat {
     /// Chat ID
     pub id: i64,
